@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Support Center - Kielo</title>
+    <style>
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+      }
+      .header {
+        text-align: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px 20px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+      }
+      .header h1 {
+        margin: 0;
+        font-size: 2.5em;
+        font-weight: 700;
+      }
+      .header p {
+        margin: 10px 0 0 0;
+        font-size: 1.1em;
+        opacity: 0.9;
+      }
+      .container {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+      .quick-help {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+      .help-card {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 20px;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .help-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+      }
+      .help-card h3 {
+        color: #2d3748;
+        margin-top: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+      .contact-section {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        margin: 30px 0;
+      }
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .contact-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 8px;
+        backdrop-filter: blur(10px);
+      }
+      h1,
+      h2,
+      h3 {
+        color: #2d3748;
+      }
+      h2 {
+        border-bottom: 2px solid #e2e8f0;
+        padding-bottom: 10px;
+      }
+      a {
+        color: #667eea;
+        text-decoration: none;
+        font-weight: 500;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      .contact-section a {
+        color: white;
+        text-decoration: underline;
+      }
+      ul,
+      ol {
+        padding-left: 20px;
+      }
+      li {
+        margin-bottom: 8px;
+      }
+      .faq-item {
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        overflow: hidden;
+      }
+      .faq-question {
+        background: #f8fafc;
+        padding: 15px 20px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .faq-question:hover {
+        background: #e2e8f0;
+      }
+      .faq-answer {
+        padding: 15px 20px;
+        display: none;
+      }
+      .status-indicator {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        margin-right: 8px;
+      }
+      .status-online {
+        background-color: #48bb78;
+      }
+      .status-busy {
+        background-color: #ed8936;
+      }
+      .status-offline {
+        background-color: #e53e3e;
+      }
+      .priority-badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 12px;
+        font-size: 0.8em;
+        font-weight: 600;
+        margin-left: 10px;
+      }
+      .priority-urgent {
+        background: #fed7d7;
+        color: #c53030;
+      }
+      .priority-normal {
+        background: #e6fffa;
+        color: #319795;
+      }
+      .data-request-form {
+        background: #f0fff4;
+        border: 1px solid #c6f6d5;
+        border-radius: 8px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Kielo Support Center</h1>
+      <p>We're here to help you on your language learning journey</p>
+    </div>
+
+    <div class="container">
+      <h2>Quick Help</h2>
+      <div class="quick-help">
+        <div class="help-card">
+          <h3>🚀 Getting Started</h3>
+          <p>
+            New to Kielo? Learn how to set up your account, choose your learning
+            language, and start your first lesson.
+          </p>
+          <ul>
+            <li>Create your account with email or social login</li>
+            <li>Select your target language and proficiency level</li>
+            <li>Set your daily learning goals</li>
+            <li>Complete your first conversation practice</li>
+          </ul>
+        </div>
+
+        <div class="help-card">
+          <h3>🎯 Learning Features</h3>
+          <p>Make the most of Kielo's learning tools and features.</p>
+          <ul>
+            <li>AI Conversation Practice - Real-time speaking practice</li>
+            <li>Progress Tracking - Monitor your learning journey</li>
+            <li>Daily Streaks - Build consistent learning habits</li>
+            <li>Vocabulary Building - Expand your word knowledge</li>
+          </ul>
+        </div>
+
+        <div class="help-card">
+          <h3>💳 Subscription & Billing</h3>
+          <p>Information about premium features, billing, and cancellations.</p>
+          <ul>
+            <li>Free vs Premium features comparison</li>
+            <li>How to upgrade to Premium</li>
+            <li>Billing cycle and payment methods</li>
+            <li>Cancellation and refund policy</li>
+          </ul>
+        </div>
+
+        <div class="help-card">
+          <h3>🔒 Privacy & Security</h3>
+          <p>Your data protection and account security information.</p>
+          <ul>
+            <li>How we protect your personal data</li>
+            <li>Managing your privacy settings</li>
+            <li>Account security best practices</li>
+            <li>Data deletion and export options</li>
+          </ul>
+        </div>
+
+        <div class="help-card">
+          <h3>⚙️ Technical Support</h3>
+          <p>Troubleshooting common technical issues.</p>
+          <ul>
+            <li>App crashes or performance issues</li>
+            <li>Audio/microphone problems</li>
+            <li>Login and sync issues</li>
+            <li>Supported devices and OS versions</li>
+          </ul>
+        </div>
+
+        <div class="help-card">
+          <h3>🌍 EU Consumer Rights</h3>
+          <p>Information about your rights as an EU consumer.</p>
+          <ul>
+            <li>14-day cooling-off period</li>
+            <li>Right to withdraw from purchases</li>
+            <li>GDPR data rights and requests</li>
+            <li>Complaint procedures and dispute resolution</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-section">
+      <h2>Contact Support</h2>
+      <p>Choose the best way to reach us based on your needs:</p>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <h3>
+            <span class="status-indicator status-online"></span>Email Support
+          </h3>
+          <p>
+            <strong>General Support:</strong><br />
+            <a href="mailto:connect+support@kielo.app"
+              >connect+support@kielo.app</a
+            >
+          </p>
+          <p>
+            <strong>Response Time:</strong> Within 24 hours<span
+              class="priority-badge priority-normal"
+              >Standard</span
+            >
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <h3>
+            <span class="status-indicator status-online"></span>Privacy & GDPR
+          </h3>
+          <p>
+            <strong>Data Protection Officer:</strong><br />
+            <a href="mailto:connect+privacy@kielo.app"
+              >connect+privacy@kielo.app</a
+            >
+          </p>
+          <p>
+            <strong>Response Time:</strong> Within 30 days<span
+              class="priority-badge priority-urgent"
+              >Legal Requirement</span
+            >
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <h3>
+            <span class="status-indicator status-busy"></span>Billing Support
+          </h3>
+          <p>
+            <strong>Billing Issues:</strong><br />
+            <a href="mailto:connect+billing@kielo.app"
+              >connect+billing@kielo.app</a
+            >
+          </p>
+          <p>
+            <strong>Response Time:</strong> Within 48 hours<span
+              class="priority-badge priority-normal"
+              >Standard</span
+            >
+          </p>
+        </div>
+
+        <div class="contact-item">
+          <h3>
+            <span class="status-indicator status-online"></span>Business
+            Inquiries
+          </h3>
+          <p>
+            <strong>Partnerships & Legal:</strong><br />
+            <a href="mailto:connect+legal@kielo.app">connect+legal@kielo.app</a>
+          </p>
+          <p>
+            <strong>Response Time:</strong> 3-5 business days<span
+              class="priority-badge priority-normal"
+              >Standard</span
+            >
+          </p>
+        </div>
+      </div>
+
+      <p>
+        <strong>Support Hours:</strong> Monday-Friday, 9:00 AM - 6:00 PM CET<br />
+        <strong>Emergency Support:</strong> Critical security or privacy issues
+        are prioritized 24/7
+      </p>
+    </div>
+
+    <div class="container">
+      <h2>GDPR Data Subject Requests</h2>
+      <div class="data-request-form">
+        <h3>🔐 Exercise Your Data Rights</h3>
+        <p>As an EU data subject, you can request:</p>
+        <ul>
+          <li>
+            <strong>Data Access:</strong> Get a copy of your personal data
+          </li>
+          <li>
+            <strong>Data Correction:</strong> Update incorrect or incomplete
+            information
+          </li>
+          <li>
+            <strong>Data Deletion:</strong> Request removal of your personal
+            data
+          </li>
+          <li>
+            <strong>Data Portability:</strong> Export your data in
+            machine-readable format
+          </li>
+          <li>
+            <strong>Processing Restriction:</strong> Limit how we use your data
+          </li>
+          <li>
+            <strong>Objection:</strong> Object to certain data processing
+            activities
+          </li>
+        </ul>
+        <p>
+          <strong>To make a request:</strong> Email
+          <a href="mailto:connect+privacy@kielo.app"
+            >connect+privacy@kielo.app</a
+          >
+          with your specific request and account email address. We'll respond
+          within 30 days as required by GDPR.
+        </p>
+        <p>
+          <strong>Identity Verification:</strong> For security, we may request
+          additional verification before processing your request.
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          How do I change my learning language?
+        </div>
+        <div class="faq-answer">
+          <p>You can change your learning language in your Profile settings:</p>
+          <ol>
+            <li>Open the app and go to your Profile tab</li>
+            <li>Tap on "Learning Language"</li>
+            <li>Select your new target language</li>
+            <li>Your progress will be saved separately for each language</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          Why isn't my microphone working during conversation practice?
+        </div>
+        <div class="faq-answer">
+          <p>Common microphone issues and solutions:</p>
+          <ul>
+            <li>
+              <strong>Permissions:</strong> Ensure Kielo has microphone access
+              in your device settings
+            </li>
+            <li>
+              <strong>Other apps:</strong> Close other apps that might be using
+              the microphone
+            </li>
+            <li>
+              <strong>Hardware:</strong> Test your microphone with another app
+              to ensure it's working
+            </li>
+            <li>
+              <strong>Network:</strong> Poor internet connection can affect
+              voice recognition
+            </li>
+            <li>
+              <strong>Restart:</strong> Close and reopen the app, or restart
+              your device
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          How do I cancel my premium subscription?
+        </div>
+        <div class="faq-answer">
+          <p>To cancel your subscription:</p>
+          <ol>
+            <li>Go to Profile → Settings → Subscription</li>
+            <li>Select "Manage Subscription"</li>
+            <li>Choose "Cancel Subscription"</li>
+            <li>Confirm cancellation</li>
+          </ol>
+          <p>
+            <strong>EU Consumer Rights:</strong> You have 14 days from purchase
+            to request a full refund. Contact
+            <a href="mailto:connect+billing@kielo.app"
+              >connect+billing@kielo.app</a
+            >
+            for refund requests.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          How is my conversation data used and stored?
+        </div>
+        <div class="faq-answer">
+          <p>Your conversation practice data:</p>
+          <ul>
+            <li>
+              <strong>Voice recordings:</strong> Processed in real-time for
+              speech recognition, then deleted within 24-48 hours
+            </li>
+            <li>
+              <strong>Conversation transcripts:</strong> Stored to provide your
+              learning history and improve our AI
+            </li>
+            <li>
+              <strong>Third-party processing:</strong> Voice data is processed
+              by our AI partners but not stored long-term
+            </li>
+            <li>
+              <strong>Your control:</strong> You can delete conversation history
+              anytime in Privacy settings
+            </li>
+          </ul>
+          <p>
+            For complete details, see our
+            <a href="#privacy-policy">Privacy Policy</a>.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          How do I delete my account and data?
+        </div>
+        <div class="faq-answer">
+          <p>To permanently delete your account:</p>
+          <ol>
+            <li>Go to Profile → Settings → Privacy</li>
+            <li>Select "Delete Account"</li>
+            <li>Read the deletion information carefully</li>
+            <li>Confirm deletion by typing your email address</li>
+            <li>Your data will be permanently removed within 30 days</li>
+          </ol>
+          <p>
+            <strong>Note:</strong> This action cannot be undone. All your
+            learning progress, conversations, and account data will be
+            permanently deleted.
+          </p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFAQ(this)">
+          What are my rights under GDPR?
+        </div>
+        <div class="faq-answer">
+          <p>As an EU data subject, you have these rights:</p>
+          <ul>
+            <li>
+              <strong>Right to be informed:</strong> Clear information about how
+              we use your data
+            </li>
+            <li>
+              <strong>Right of access:</strong> Get a copy of your personal data
+            </li>
+            <li>
+              <strong>Right to rectification:</strong> Correct inaccurate or
+              incomplete data
+            </li>
+            <li>
+              <strong>Right to erasure:</strong> Request deletion of your
+              personal data
+            </li>
+            <li>
+              <strong>Right to restrict processing:</strong> Limit how we
+              process your data
+            </li>
+            <li>
+              <strong>Right to data portability:</strong> Export your data in a
+              machine-readable format
+            </li>
+            <li>
+              <strong>Right to object:</strong> Object to certain types of data
+              processing
+            </li>
+          </ul>
+          <p>
+            Contact
+            <a href="mailto:connect+privacy@kielo.app"
+              >connect+privacy@kielo.app</a
+            >
+            to exercise any of these rights.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2>System Status & Known Issues</h2>
+      <p>
+        <span class="status-indicator status-online"></span
+        ><strong>All Systems Operational</strong> - Last updated: August 11,
+        2025, 10:00 AM CET
+      </p>
+
+      <h3>Recent Updates</h3>
+      <ul>
+        <li>
+          <strong>August 10, 2025:</strong> Improved AI conversation accuracy
+          and response time
+        </li>
+        <li>
+          <strong>August 8, 2025:</strong> Fixed iOS microphone permission issue
+        </li>
+        <li>
+          <strong>August 5, 2025:</strong> Enhanced progress tracking for
+          reading exercises
+        </li>
+      </ul>
+
+      <h3>Planned Maintenance</h3>
+      <p>
+        No scheduled maintenance at this time. We'll notify users 48 hours in
+        advance of any planned downtime.
+      </p>
+    </div>
+
+    <div class="container">
+      <h2>Feedback & Suggestions</h2>
+      <p>We value your input! Help us improve Kielo by sharing:</p>
+      <ul>
+        <li>Feature requests and suggestions</li>
+        <li>Bug reports or issues</li>
+        <li>General feedback about your learning experience</li>
+        <li>Content requests (new languages, topics, etc.)</li>
+      </ul>
+      <p>
+        Send your feedback to:
+        <a href="mailto:connect+feedback@kielo.app"
+          >connect+feedback@kielo.app</a
+        >
+      </p>
+    </div>
+
+    <script>
+      function toggleFAQ(element) {
+        const answer = element.nextElementSibling;
+        const isVisible = answer.style.display === "block";
+
+        // Close all other FAQs
+        document
+          .querySelectorAll(".faq-answer")
+          .forEach((el) => (el.style.display = "none"));
+
+        // Toggle current FAQ
+        answer.style.display = isVisible ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>
