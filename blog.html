@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Kielo Blog — Learn Finnish from Real News</title>
+
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Kielo Blog — Real‑world Finnish with AI"
+    />
+    <meta
+      property="og:description"
+      content="Learn Finnish through short, real‑world articles with AI guidance. Read, practice, and make daily progress."
+    />
+    <meta property="og:url" content="https://kielo.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://kielo.app/assets/feature.jpg" />
+    <meta property="og:site_name" content="Kielo" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Kielo Blog — Real‑world Finnish with AI"
+    />
+    <meta
+      name="twitter:description"
+      content="Learn Finnish through short, real‑world articles with AI guidance. Read, practice, and make daily progress."
+    />
+    <meta name="twitter:image" content="https://kielo.app/assets/feature.jpg" />
+    <meta name="twitter:site" content="@kielo.app" />
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1" name="viewport" />
+
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/assets/favicon_io/site.webmanifest" />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+      }
+      .frame {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+      body {
+        background: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      allow="fullscreen; autoplay; clipboard-write"
+      class="frame"
+      loading="lazy"
+      referrerpolicy="strict-origin-when-cross-origin"
+      src="https://proxy-worker.kielo.app/https://kieloapp.wordpress.com/"
+      title="Kielo Blog"
+    ></iframe>
+
+    <script>
+      (() => {
+        const e = document.querySelector(".frame"),
+          t = "https://proxy-worker.kielo.app",
+          n = "proxy",
+          o = () => new URL(location.href).searchParams.get(n),
+          r = (r, { replace: a = !1 } = {}) => {
+            const s = new URL(location.href);
+            s.searchParams.set(n, r),
+              (a ? history.replaceState : history.pushState).call(
+                history,
+                null,
+                "",
+                s
+              );
+            const i = document.querySelector("noscript a[href]");
+            i && i.setAttribute("href", r);
+          },
+          c = (n, o) => `${t}/${n}${o}`,
+          l = o();
+        if (l)
+          try {
+            e.src = new URL(l).toString();
+          } catch {}
+        else r(e.src, { replace: !0 });
+        window.addEventListener("message", (n) => {
+          if (n.origin !== t) return;
+          const o = n.data || {};
+          if ("u" !== o.t || "string" != typeof o.p || "string" != typeof o.o)
+            return;
+          const a = c(o.o, o.p),
+            s = (o) => new URL(location.href).searchParams.get(o),
+            i = s(n);
+          i !== a && r(a);
+        }),
+          window.addEventListener("popstate", () => {
+            const t = o();
+            if (!t) return;
+            try {
+              const n = new URL(t),
+                o = n.pathname.match(/^\/https?:\/\/[^\/]+(\/.*)?$/),
+                a = (o ? o[1] || "/" : "/") + n.search + n.hash;
+              e.contentWindow &&
+                e.contentWindow.postMessage(
+                  { t: "d", p: a },
+                  t.startsWith("http") ? new URL(t).origin : t
+                ),
+                (e.src = t);
+            } catch {}
+          });
+      })();
+    </script>
+
+    <noscript>
+      <p
+        style="
+          position: fixed;
+          inset: 0;
+          display: grid;
+          place-items: center;
+          color: #e6e6e6;
+        "
+      >
+        JavaScript is required to display the blog.
+        <a
+          href="https://proxy-worker.kielo.app/https://kieloapp.wordpress.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >Open in a new tab.</a
+        >
+      </p>
+    </noscript>
+  </body>
+</html>
+
