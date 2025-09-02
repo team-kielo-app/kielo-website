@@ -113,7 +113,7 @@
           const o = n.data || {};
           if ("u" !== o.t || "string" != typeof o.p || "string" != typeof o.o)
             return;
-          const a = `${t}/${o.p}`;
+          const a = t + o.p;
           const s = (o) => new URL(location.href).searchParams.get(o);
           const i = s(n);
           i !== a && r(a);
