@@ -70,65 +70,71 @@
     </style>
   </head>
   <body>
-    <iframe
-      allow="fullscreen; autoplay; clipboard-write"
-      class="frame"
-      loading="lazy"
-      referrerpolicy="strict-origin-when-cross-origin"
-      src="https://proxy-worker.kielo.app/https://kieloapp.wordpress.com/"
-      title="Kielo Blog"
-    ></iframe>
-
     <script>
       (() => {
-        const e = document.querySelector(".frame"),
-          t = "https://proxy-worker.kielo.app",
-          n = "proxy",
-          o = () => new URL(location.href).searchParams.get(n),
-          r = (r, { replace: a = !1 } = {}) => {
-            const s = new URL(location.href);
-            s.searchParams.set(n, r),
-              (a ? history.replaceState : history.pushState).call(
-                history,
-                null,
-                "",
-                s
-              );
-            const i = document.querySelector("noscript a[href]");
-            i && i.setAttribute("href", r);
-          },
-          c = (n, o) => `${t}/${n}${o}`,
-          l = o();
-        if (l)
+        const PATH = "https://kieloapp.wordpress.com";
+        const t = "https://proxy-worker.kielo.app";
+        const n = "proxy";
+
+        const e = document.createElement("iframe");
+        e.className = "frame";
+        e.setAttribute("allow", "fullscreen; autoplay; clipboard-write");
+        e.setAttribute("loading", "lazy");
+        e.setAttribute("referrerpolicy", "strict-origin-when-cross-origin");
+        e.setAttribute("title", "Kielo Blog");
+        document.body.appendChild(e);
+
+        const o = () => new URL(location.href).searchParams.get(n);
+        const r = (r, { replace: a = !1 } = {}) => {
+          const s = new URL(location.href);
+          s.searchParams.set(n, r);
+          (a ? history.replaceState : history.pushState).call(
+            history,
+            null,
+            "",
+            s
+          );
+          const i = document.querySelector("noscript a[href]");
+          i && i.setAttribute("href", r);
+        };
+        const c = (n, o) => `${t}/${n}${o}`;
+        const l = o();
+
+        if (l) {
           try {
             e.src = new URL(l).toString();
           } catch {}
-        else r(e.src, { replace: !0 });
+        } else {
+          r(`${t}/${PATH}/`, { replace: !0 });
+          e.src = `${t}/${PATH}/`;
+        }
+
         window.addEventListener("message", (n) => {
           if (n.origin !== t) return;
           const o = n.data || {};
           if ("u" !== o.t || "string" != typeof o.p || "string" != typeof o.o)
             return;
-          const a = c(o.o, o.p),
-            s = (o) => new URL(location.href).searchParams.get(o),
-            i = s(n);
+          const a = c(o.o, o.p);
+          const s = (o) => new URL(location.href).searchParams.get(o);
+          const i = s(n);
           i !== a && r(a);
-        }),
-          window.addEventListener("popstate", () => {
-            const t = o();
-            if (!t) return;
-            try {
-              const n = new URL(t),
-                o = n.pathname.match(/^\/https?:\/\/[^\/]+(\/.*)?$/),
-                a = (o ? o[1] || "/" : "/") + n.search + n.hash;
-              e.contentWindow &&
-                e.contentWindow.postMessage(
-                  { t: "d", p: a },
-                  t.startsWith("http") ? new URL(t).origin : t
-                ),
-                (e.src = t);
-            } catch {}
-          });
+        });
+
+        window.addEventListener("popstate", () => {
+          const t = o();
+          if (!t) return;
+          try {
+            const n = new URL(t);
+            const o = n.pathname.match(/^\/https?:\/\/[^\/]+(\/.*)?$/);
+            const a = (o ? o[1] || "/" : "/") + n.search + n.hash;
+            e.contentWindow &&
+              e.contentWindow.postMessage(
+                { t: "d", p: a },
+                t.startsWith("http") ? new URL(t).origin : t
+              );
+            e.src = t;
+          } catch {}
+        });
       })();
     </script>
 
