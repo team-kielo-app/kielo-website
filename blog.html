@@ -97,7 +97,6 @@
           const i = document.querySelector("noscript a[href]");
           i && i.setAttribute("href", r);
         };
-        const c = (n, o) => `${t}/${n}${o}`;
         const l = o();
 
         if (l) {
@@ -114,7 +113,7 @@
           const o = n.data || {};
           if ("u" !== o.t || "string" != typeof o.p || "string" != typeof o.o)
             return;
-          const a = c(o.o, o.p);
+          const a = `${t}/${o.p}`;
           const s = (o) => new URL(location.href).searchParams.get(o);
           const i = s(n);
           i !== a && r(a);
