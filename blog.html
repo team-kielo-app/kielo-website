@@ -104,8 +104,8 @@
             e.src = new URL(l).toString();
           } catch {}
         } else {
-          r(t, { replace: !0 });
-          e.src = t;
+          r(`${t}/${PATH}/`, { replace: !0 });
+          e.src = `${t}/${PATH}/`;
         }
 
         window.addEventListener("message", (n) => {
